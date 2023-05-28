@@ -1,0 +1,44 @@
+# ==================================================================
+# call-mega-linter.yml
+# ==================================================================
+# THIS IS THE EXAMPLE YOU WORK FROM TO MAKE YOUR OWN WORKFLOW FILE
+# ==================================================================
+name: Lint Project
+
+on:
+
+    push:
+        branches: [master]
+    pull_request:
+
+concurrency:
+    group: ${{ github.ref }}-${{ github.workflow }}
+    cancel-in-progress: true
+
+jobs:
+
+    call-mega-linter:
+
+        name: Call MegaLinter
+
+        permissions:
+            contents: read
+            statuses: write
+
+        ### use Reusable Workflows to call my workflow remotely
+        ### https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
+        ### you can also call workflows from inside the same repo via file path
+
+        # FIXME: customize uri to point to your own reusable linter repository
+        uses: ragsworks/mega-linter-workflow/.github/workflows/reusable-mega-linter.yml@master
+
+        ### Optional settings examples
+
+        # with:
+        ### For a DevOps-focused repository. Prevents some code-language linters from running
+        ### defaults to false
+        # devops-only: false
+
+        ### A regex to exclude files from linting
+        ### defaults to empty
+        # filter-regex-exclude: html/.*
