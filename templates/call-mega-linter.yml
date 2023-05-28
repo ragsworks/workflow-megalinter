@@ -24,6 +24,7 @@ jobs:
         permissions:
             contents: read
             statuses: write
+            packages: write
 
         ### use Reusable Workflows to call my workflow remotely
         ### https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
