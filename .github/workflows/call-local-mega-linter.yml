@@ -23,7 +23,7 @@ jobs:
     call-mega-linter:
 
         name: Call MegaLinter
-        uses: ./.github/workflows/reusable-mega-linter.yml
+        uses: ./.github/workflows/reusable-mega-linter.yml@master
 
         permissions:
             contents: read
