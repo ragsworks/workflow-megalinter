@@ -11,13 +11,12 @@ on:
     workflow_call:
 
         inputs:
-            devops-only:
-                description: For a DevOps-focused repository.  Prevents some code-language linters from running
+            apply-fixes-event:
+                description: Which events will trigger fixes to be applied?
                 required: false
-                type: boolean
-                default: false
-            filter-regex-exclude:
-                description: A regex to exclude files from linting
+                type: string
+            apply-fixes-mode:
+                description: Will fixes be committed directly to the repo, or will a pull_request be raised?
                 required: false
                 type: string
 
@@ -41,64 +40,32 @@ jobs:
                   # Full git history is needed to get a proper list of changed files within super-linter
                   fetch-depth: 0
 
-            # custom DEFAULT_BRANCH for repos where PR target isn't always main/master
-            - name: Set DEFAULT_BRANCH to PR target
-                # if base_ref has a value, this is a PR
-                # we save the PR target branch name to a variable for use in linter config
-                # we pass string between job steps by echoing to $GITHUB_ENV, making it available in $env later
-              if: ${{ github.base_ref != '' }}
-              run: |
-                  # shellcheck disable=2086
-                  echo "DEFAULT_BRANCH=${{ github.base_ref }}" >> $GITHUB_ENV
-                  echo "this is a PR branch. Let's only lint the files that are changed against the target branch '${{ github.base_ref }}'"
-
-            - name: Set DEFAULT_BRANCH to current branch
-                # if base_ref has no value, this is just a commit on a branch
-                # we need to strip refs/heads from github.ref to find the current branch name
-                # then save the current branch name to a variable for use in linter config later
-                # we pass strings between job steps by echoing to $GITHUB_ENV, making it available in $env later
-              if: ${{ github.base_ref == '' }}
-              run: |
-                  # shellcheck disable=2086
-                  echo "DEFAULT_BRANCH=$(echo '${{ github.ref }}' | sed 's/refs\/heads\///')" >> $GITHUB_ENV
-                  echo "this is just a branch push, not a PR."
-
             # used as a debug step to ensure we're only linting all files on release branches
             - name: Are we linting all files?
               run: |
                   echo VALIDATE_ALL_CODEBASE=${{ !contains(github.event_name, 'pull_request') }}
 
-            # customize excluded paths and files with regex
-            - name: FILTER_REGEX_EXCLUDE
-              if: ${{ inputs.filter-regex-exclude }}
+            # which events will trigger fixes to be applied?
+            - name: APPLY_FIXES_EVENT
+              if: ${{ inputs.apply-fixes-event }}
               run: |
-                  # shellcheck disable=2086
-                  {
-                    echo "FILTER_REGEX_EXCLUDE=${{ inputs.filter-regex-exclude }}" >> $GITHUB_ENV
-                  }
+                  echo "APPLY_FIXES_EVENT=${{ inputs.apply-fixes-event }}" >> $GITHUB_ENV
 
-            # disable non-DevOps focused linters that might run on sample code or 3rd party code
-            # these env's will get pass to the next step
-            - name: Disable non-DevOps linters
-              if: ${{ inputs.devops-only == true }}
+            - name: APPLY_FIXES_EVENT EMPTY
+              if: ${{ !inputs.apply-fixes-event }}
               run: |
-                  # shellcheck disable=2086
-                  {
-                    echo "VALIDATE_CSS=false";
-                    echo "VALIDATE_HTML=false";
-                    echo "VALIDATE_JAVASCRIPT_ES=false";
-                    echo "VALIDATE_TYPESCRIPT_ES=false";
-                    echo "VALIDATE_TYPESCRIPT_STANDARD=false";
-                    echo "VALIDATE_JAVASCRIPT_STANDARD=false";
-                    echo "VALIDATE_PYTHON_MYPY=false";
-                    echo "VALIDATE_PYTHON_BLACK=false";
-                    echo "VALIDATE_PYTHON_FLAKE8=false";
-                    echo "VALIDATE_PYTHON_ISORT=false";
-                    echo "VALIDATE_RUBY=false";
-                    echo "VALIDATE_PHP=false";
-                    echo "VALIDATE_CSHARP=false";
+                  echo "APPLY_FIXES_EVENT=all" >> $GITHUB_ENV
 
-                  } >> $GITHUB_ENV
+            # which mode are fixes going to be applied in?
+            - name: APPLY_FIXES_MODE
+              if: ${{ inputs.apply-fixes-mode }}
+              run: |
+                  echo "APPLY_FIXES_MODE=${{ inputs.apply-fixes-mode }}" >> $GITHUB_ENV
+
+            - name: APPLY_FIXES_MODE EMPTY
+              if: ${{ !inputs.apply-fixes-mode }}
+              run: |
+                  echo "APPLY_FIXES_MODE=pull_request" >> $GITHUB_ENV
 
             # Run many Linters against changed files on PRs, and ALL files on commit to release branch
             # https://github.com/marketplace/actions/megalinter
@@ -113,19 +80,19 @@ jobs:
                   DEFAULT_BRANCH: ${{ env.DEFAULT_BRANCH }}
                   # setting this to false means that only changed files will be scanned in each commit
                   VALIDATE_ALL_CODEBASE: ${{ !contains(github.event_name, 'pull_request') }}
-                  # turn off dockerfilelint, as its a dead project
-                  # https://github.com/replicatedhq/dockerfilelint/issues/169
-                  # hadolint will still run and is sufficient (no need for two linters)
-                  VALIDATE_DOCKERFILE: false
-                  # turn off JSCPD copy/paste detection, which results in lots of results for examples and devops repos
-                  VALIDATE_JSCPD: false
-                  # turn off shfmt shell formatter as we already have shellcheck
-                  VALIDATE_SHELL_SHFMT: false
-                  # editorconfig is great, but...
-                  # editorconfig-linter is rather generic and file-specific linters are better
-                  # turn off editorconfig-checker, which flags too many false positives
-                  VALIDATE_EDITORCONFIG: false
-                  # prevent Kubernetes CRD API's from causing kubeval to fail
-                  # also change schema location to an up-to-date list
-                  # https://github.com/yannh/kubernetes-json-schema/#kubeval
-                  KUBERNETES_KUBEVAL_OPTIONS: --ignore-missing-schemas --schema-location https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/
+                  # FIXES
+                  APPLY_FIXES_EVENT: ${{ env.APPLY_FIXES_EVENT }}
+                  APPLY_FIXES_MODE: ${{ env.APPLY_FIXES_MODE }}
+
+            # Artifacts Upload may be used as an alternative to File.io Reporter
+#            - name: Archive Report Artifacts
+#              uses: actions/upload-artifact@v3
+#              with:
+#                  name: JSON Report
+#                  path: /github/workspace/megalinter-reports/mega-linter-report.json
+#
+#            - name: Archive Fixed Sources
+#              uses: actions/upload-artifact@v3
+#              with:
+#                  name: Fixed Sources
+#                  path: /github/workspace/megalinter-reports/updated_sources/**
