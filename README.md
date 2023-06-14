@@ -2,17 +2,17 @@
 
 <img height="196" src="https://raw.githubusercontent.com/Ragdata/media/master/project/ragsworks/logo/ragsworks-256.png" alt="Ragdata" />
 
-[Ragdata's MegaLinter Workflow v-1.0.0](https://github.com/ragsworks/mega-linter-workflow/releases/tag/v-1.0.0)
+[Ragdata's MegaLinter Workflow v-1.0.0](https://github.com/ragsworks/workflow-megalinter/releases/tag/v-1.0.0)
 
 </h1>
 
 <h3 align="center">
 
-<a href="https://github.com/ragsworks/mega-linter-workflow/issues">Issues</a>
+<a href="https://github.com/ragsworks/workflow-megalinter/issues">Issues</a>
 🔸
-<a href="https://ragsworks.github.io/mega-linter-workflow">Documentation</a>
+<a href="https://ragsworks.github.io/workflow-megalinter">Documentation</a>
 🔸
-<a href="https://github.com/ragsworks/mega-linter-workflow/releases">Releases</a>
+<a href="https://github.com/ragsworks/workflow-megalinter/releases">Releases</a>
 
 </h3>
 
@@ -23,9 +23,9 @@
 
 <div align="center">
 
-![MegaLinter](https://img.shields.io/github/actions/workflow/status/ragsworks/mega-linter-workflow/call-local-mega-linter.yml?label=MegaLinter&logo=github&style=for-the-badge)
-![Open Bug Issues](https://img.shields.io/github/issues/ragsworks/mega-linter-workflow/bug?logo=github&style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/ragsworks/mega-linter-workflow/master?logo=github&style=for-the-badge)
+![MegaLinter](https://img.shields.io/github/actions/workflow/status/ragsworks/workflow-megalinter/call-local-mega-linter.yml?label=MegaLinter&logo=github&style=for-the-badge)
+![Open Bug Issues](https://img.shields.io/github/issues/ragsworks/workflow-megalinter/bug?logo=github&style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/ragsworks/workflow-megalinter/master?logo=github&style=for-the-badge)
 ![MIT](https://img.shields.io/badge/License-MIT-gold?style=for-the-badge)
 
 #### _Elapsed Project Time_
@@ -38,7 +38,7 @@
 
 If you like this repository, please give it a ⭐ (it really does help)
 
-<img alt="GitHub repository stars" src="https://img.shields.io/github/stars/ragsworks/mega-linter-workflow?style=social">
+<img alt="GitHub repository stars" src="https://img.shields.io/github/stars/ragsworks/workflow-megalinter?style=social">
 
 </h3>
 
@@ -101,8 +101,8 @@ If you're contributing code to the project, you'll want 🔴
 
 ### Project Resources
 
-- ✅ [Issues Register](https://github.com/ragsworks/mega-linter-workflow/issues)
-- ✅ [Project Site](https://ragsworks.github.io/mega-linter-workflow)
+- ✅ [Issues Register](https://github.com/ragsworks/workflow-megalinter/issues)
+- ✅ [Project Site](https://ragsworks.github.io/workflow-megalinter)
 
 <details><summary><h3>Community Resources</h3></summary>
 
@@ -111,11 +111,11 @@ If you're contributing code to the project, you'll want 🔴
 
 - [Community Support Document](https://github.com/ragsworks/.github/blob/master/.github/SUPPORT.md)
 - [Community Code of Conduct](https://github.com/ragsworks/.github/blob/master/.github/CODE_OF_CONDUCT.md)
-- [Community Standards](https://github.com/ragsworks/mega-linter-workflow/community)
-- [Security Policy](https://github.com/ragsworks/mega-linter-workflow/security/policy)
-	- [Security Overview](https://github.com/ragsworks/mega-linter-workflow/security)
-	- [Security Advisories](https://github.com/ragsworks/mega-linter-workflow/security/advisories)
-	- [Dependabot Alerts](https://github.com/ragsworks/mega-linter-workflow/security/dependabot)
+- [Community Standards](https://github.com/ragsworks/workflow-megalinter/community)
+- [Security Policy](https://github.com/ragsworks/workflow-megalinter/security/policy)
+	- [Security Overview](https://github.com/ragsworks/workflow-megalinter/security)
+	- [Security Advisories](https://github.com/ragsworks/workflow-megalinter/security/advisories)
+	- [Dependabot Alerts](https://github.com/ragsworks/workflow-megalinter/security/dependabot)
 
 </details>
 
@@ -179,7 +179,7 @@ If you discover any issue regarding the security of this project, please disclos
 ## 💎 [Contributors](#toc)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/github/all-contributors/ragsworks/mega-linter-workflow?color=ee8449&style=for-the-badge)](CONTRIBUTORS.md)
+[![All Contributors](https://img.shields.io/github/all-contributors/ragsworks/workflow-megalinter?color=ee8449&style=for-the-badge)](CONTRIBUTORS.md)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 If you'd like to make a contribution, then please see the [**Bash Bits Contributor's Guide**][contributing]
@@ -226,20 +226,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 If you like this repository, please give it a ⭐ (it really does help)
 
-<img alt="GitHub repository stars" src="https://img.shields.io/github/stars/ragsworks/mega-linter-workflow?style=social">
+<img alt="GitHub repository stars" src="https://img.shields.io/github/stars/ragsworks/workflow-megalinter?style=social">
 
 </h3>
 
 <div align="center">
 
-<a href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fragsworks%2Fmega-linter-workflow" target="_blank"><img alt="Visitors" src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2Fragsworks%2Fmega-linter-workflow&countColor=%23d20000" /></a>
+<a href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fragsworks%2Fworkflow-megalinter" target="_blank"><img alt="Visitors" src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2Fragsworks%2Fworkflow-megalinter&countColor=%23d20000" /></a>
 <a href="https://github.com/ragdata" target="_blank"><img alt="Ragdata" src="https://img.shields.io/badge/-Made_With_☕_By_Ragdata-D20000?style=for-the-badge" /></a>
 
 </div>
 
-[advisory]: https://github.com/ragsworks/mega-linter-workflow/security/advisories/new
+[advisory]: https://github.com/ragsworks/workflow-megalinter/security/advisories/new
 [all-contributors]: https://allcontributors.org
 [contributing]: https://github.com/ragsworks/.github/blob/master/.github/CONTRIBUTING.md
-[issues]: https://github.com/ragsworks/mega-linter-workflow/issues
-[security]: https://github.com/ragsworks/mega-linter-workflow/security/policy
+[issues]: https://github.com/ragsworks/workflow-megalinter/issues
+[security]: https://github.com/ragsworks/workflow-megalinter/security/policy
 [sponsors]: https://github.com/sponsors/Ragdata

@@ -31,7 +31,7 @@ jobs:
         ### you can also call workflows from inside the same repo via file path
 
         # FIXME: customize uri to point to your own reusable linter repository
-        uses: ragsworks/mega-linter-workflow/.github/workflows/reusable-mega-linter.yml@master
+        uses: ragsworks/workflow-megalinter/.github/workflows/reusable-mega-linter.yml@master
 
         ### Optional settings examples
 
