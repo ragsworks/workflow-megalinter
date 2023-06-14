@@ -1,4 +1,4 @@
-ragworks/mega-linter-workflow v-1.0.0
+ragsworks/mega-linter-workflow v-1.0.0
 
 Copyright © 2023 Darren (Ragdata) Poulton
 
@@ -8,6 +8,9 @@ ATTRIBUTIONS
 
 This project incorporates ideas and / or code crafted by the following
 talented individuals:
+
+	- bretfisher/super-linter-workflow
+	  UNLICENSED
 
 ====================================================================
          "We see much further, and reach much higher,
