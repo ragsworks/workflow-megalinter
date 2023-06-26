@@ -1,6 +1,6 @@
 {
   "projectName": "workflow-megalinter",
-  "projectOwner": "ragworks",
+  "projectOwner": "ragsworks",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": ["CONTRIBUTORS.md"],
