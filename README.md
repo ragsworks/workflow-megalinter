@@ -1,10 +1,10 @@
 <h1 align="center">
 
-<img width="100%" src="https://raw.githubusercontent.com/Ragdata/media/master/banner/wip-banner.svg" />
+<img width="100%" src="https://raw.githubusercontent.com/Ragdata/media/master/banner/pre-release.svg" />
 
 <img height="196" src="https://raw.githubusercontent.com/Ragdata/media/master/project/ragsworks/logo/ragsworks-256.png" alt="Ragdata" />
 
-[Ragdata's MegaLinter Workflow v-0.1.0](https://github.com/ragsworks/workflow-megalinter/releases/tag/v-0.1.0)
+[Reusable MegaLinter Workflow v-0.1.0](https://github.com/ragsworks/workflow-megalinter/releases/tag/v-0.1.0)
 
 </h1>
 
@@ -68,8 +68,7 @@ If you like this repository, please give it a ⭐ (it really does help)
 
 ## ⭐ [Project Overview](#-table-of-contents)
 
-
-
+`RagsWorks Reusable MegaLinter Workflow` provides examples of how to establish and call a reusable `MegaLinter` workflow both locally and from an external repository.
 
 ### [Branch Reliability](#toc)
 
@@ -88,14 +87,32 @@ If you're contributing code to the project, you'll want 🔴
 
 ## ❓ [What's Included?](#toc)
 
+- ✅ Reusable `MegaLinter` Workflow [`.github/workflows/reusable-megalinter.yml`](.github/workflows/reusable-megalinter.yml)
 
+
+- ✅ Local Call Example [`.github/workflows/call-local-mega-linter.yml`](.github/workflows/call-local-mega-linter.yml)
+- ✅ Remote Call Example [`templates/call-mega-linter.yml`](templates/call-mega-linter.yml)
 
 [`^ Top`](#toc)
 
 ## 📂 [Installation](#toc)
 
+Simply copy the critical files to wherever you need to deploy them.  For example:
+
+1. Create your own reusable workflows repository, and add the `Reusable MegaLinter Workflow` to the `.github/workflows` folder of that repository
 
 
+2. If you need to call the reusable workflow from within its own repository, then copy the `Local Call Example` to the same `.github/workflows` directory that contains your `Reusable MegaLinter Workflow`
+
+
+3. If you need to call the reusable workflow from another repository, then copy the `Remote Call Example` from the `templates` directory to the `.github/workflows` directory of the repository you want to run the workflow against. 
+
+
+[`^ Top`](#toc)
+
+## 📛 [Badges](#toc)
+
+COMING SOON
 
 [`^ Top`](#toc)
 
@@ -103,8 +120,8 @@ If you're contributing code to the project, you'll want 🔴
 
 ### Project Resources
 
-- ✅ [Issues Register](https://github.com/ragsworks/workflow-megalinter/issues)
-- ✅ [Project Site](https://ragsworks.github.io/workflow-megalinter)
+- [Issues Register](https://github.com/ragsworks/workflow-megalinter/issues)
+- [Project Site](https://ragsworks.github.io/workflow-megalinter)
 
 <details><summary><h3>Community Resources</h3></summary>
 
@@ -113,6 +130,7 @@ If you're contributing code to the project, you'll want 🔴
 
 - [Community Support Document](https://github.com/ragsworks/.github/blob/master/.github/SUPPORT.md)
 - [Community Code of Conduct](https://github.com/ragsworks/.github/blob/master/.github/CODE_OF_CONDUCT.md)
+- [Community Governance Policy](https://github.com/ragsworks/.github/blob/master/.github/GOVERNANCE.md)
 - [Community Standards](https://github.com/ragsworks/workflow-megalinter/community)
 - [Security Policy](https://github.com/ragsworks/workflow-megalinter/security/policy)
 	- [Security Overview](https://github.com/ragsworks/workflow-megalinter/security)
@@ -158,11 +176,11 @@ If you're contributing code to the project, you'll want 🔴
 
 ### [Join me & the RedEyed Community!](https://discord.gg/s6gZZUc67y)
 
-<a href="https://twitter.com/intent/follow?screen_name=RagdataAU" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=Twitter&logoColor=white" /></a>
-<a href="https://www.reddit.com/r/RedeyedSoftware/" target="_blank"><img alt="Reddit" src="https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=Reddit&logoColor=white" /></a>
-<a href="https://dev.to/ragdata" target="_blank"><img alt="Dev.to" src="https://img.shields.io/badge/dev.to-373737?style=for-the-badge&logo=dev.to&logoColor=white" /></a>
-<a href="https://ragdata.substack.com/" target="_blank"><img alt="SubStack" src="https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=Substack&logoColor=white" /></a>
-<a href="https://www.facebook.com/RedEyedSoftware/" target="_blank"><img alt="Facebook" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=Facebook&logoColor=white" /></a>
+<a href="https://www.facebook.com/RedeyedAU/" target="_blank"><img alt="Facebook" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=Facebook&logoColor=white" /></a>
+<a href="https://redeyedau.substack.com/" target="_blank"><img alt="SubStack" src="https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=Substack&logoColor=white" /></a>
+<a href="https://dev.to/redeyed-au" target="_blank"><img alt="Dev.to" src="https://img.shields.io/badge/dev.to-373737?style=for-the-badge&logo=dev.to&logoColor=white" /></a>
+<a href="https://www.reddit.com/r/RedeyedAU/" target="_blank"><img alt="Reddit" src="https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=Reddit&logoColor=white" /></a>
+<a href="https://twitter.com/intent/follow?screen_name=RedeyedAU" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=Twitter&logoColor=white" /></a>
 
 [![Discord](https://img.shields.io/discord/1067204348251230298?labelColor=5865F2&label=RedEyed%20Software%20&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/s6gZZUc67y)
 
@@ -172,7 +190,7 @@ If you're contributing code to the project, you'll want 🔴
 
 ## 🔐 [Security](#toc)
 
-While the `RagsWorks` project follows good security practices, 100% security can never be guaranteed in any software package.  The `RagsWorks Super-Linter Workflow` is provided AS IS, and without warranty.  You can find more details in the [LICENSE](LICENSE) file included with this repository.
+While the `RagsWorks` project follows good security practices, 100% security can never be guaranteed in any software package.  The `RagsWorks MegaLinter Workflow` is provided AS IS, and without warranty.  You can find more details in the [LICENSE](LICENSE) file included with this repository.
 
 If you discover any issue regarding the security of this project, please disclose that information responsibly by sending a [security advisory][advisory].  **PLEASE DO NOT CREATE AN ISSUE OR DISCUSSION TOPIC.**  You can read more about this project's security policies [HERE][security]
 
