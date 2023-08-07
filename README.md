@@ -25,7 +25,7 @@
 
 <div align="center">
 
-![MegaLinter](https://img.shields.io/github/actions/workflow/status/ragsworks/workflow-megalinter/call-local-mega-linter.yml?label=MegaLinter&logo=github&style=for-the-badge)
+[//]: # (![MegaLinter]&#40;https://img.shields.io/github/actions/workflow/status/ragsworks/workflow-megalinter/call-local-mega-linter.yml?label=MegaLinter&logo=github&style=for-the-badge&#41;)
 ![Open Bug Issues](https://img.shields.io/github/issues/ragsworks/workflow-megalinter/bug?logo=github&style=for-the-badge)
 ![Last Commit](https://img.shields.io/github/last-commit/ragsworks/workflow-megalinter/master?logo=github&style=for-the-badge)
 ![MIT](https://img.shields.io/badge/License-MIT-gold?style=for-the-badge)
@@ -123,7 +123,7 @@ COMING SOON
 - [Issues Register](https://github.com/ragsworks/workflow-megalinter/issues)
 - [Project Site](https://ragsworks.github.io/workflow-megalinter)
 
-<details><summary><h3>Community Resources</h3></summary>
+### Community Resources
 
 - [**The RedEyed Community Discord Server**](https://discord.gg/s6gZZUc67y)
 
@@ -136,8 +136,6 @@ COMING SOON
 	- [Security Overview](https://github.com/ragsworks/workflow-megalinter/security)
 	- [Security Advisories](https://github.com/ragsworks/workflow-megalinter/security/advisories)
 	- [Dependabot Alerts](https://github.com/ragsworks/workflow-megalinter/security/dependabot)
-
-</details>
 
 [`^ Top`](#toc)
 
